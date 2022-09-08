@@ -1,5 +1,7 @@
-const {Todo} = require('../models/todo');
-const express = require('express');
+
+import Todo  from '../models/todo.js';
+import express from 'express';
+
 const router = express.Router();
 
 router.get(`/`, async (req, res) =>{
@@ -61,4 +63,4 @@ router.post('/',async(req,res)=>{
     res.send(todo)
 })
 
-module.exports =router;
+export default router;

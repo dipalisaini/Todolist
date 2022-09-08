@@ -1,8 +1,12 @@
-const express = require("express");
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import todoRoutes from "./routes/todos.js";
+
 const app = express();
 
-const mongoose = require("mongoose");
-const cors = require("cors");
+
+
 const CONNECTION_STRING = process.env.CONNECTION_STRING || "mongodb+srv://Dipali:1234@cluster0.trrhhg4.mongodb.net/?retryWrites=true&w=majority";
 
 
@@ -14,7 +18,6 @@ app.use(express.json());
 
 //Routes
 
-const todoRoutes = require("./routes/todos");
 
 app.use(`/api/v1/todo`, todoRoutes);
 
